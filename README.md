@@ -1,5 +1,5 @@
 # Neural Network Charity Analysis
-Alphabet Soup is a non-profit foundation that provides funding to organizations dedicated to protecting the environment, improving people’s well-being and unifying the world. To help them predict which organizations to donate to I created a deep learning model using TensorFlow.
+Alphabet Soup is a non-profit foundation that provides funding to organizations dedicated to protecting the environment, improving people’s well-being and unifying the world. To help them predict which organizations to donate to I created a deep learning model using TensorFlow. Then I optimized the model for accuracy.
 
 <details><summary> <h2>Deliverable 1: Preprocessing Data for a Neural Network Model</h2></summary>
 
@@ -153,16 +153,15 @@ print(f" Random forest model accuracy: {accuracy_score(y_test,y_pred):.3f}")
  accuracy: 0.716
 </details>
 
-## Deliverable 3: Optimize the Model
+<details><summary><h2>Deliverable 3: Optimize the Model</h2></summary>
 
-### Conclusions: Compiling, Training, and Evaluating the Model
--  **How many neurons, layers, and activation functions did you select for your neural network model, and why?** 
+<h3>How many neurons, layers, and activation functions did you select for your neural network model, and why?</h3>
 
 I experimented with different numbers of neurons and layers. I also experiment with the different activation functions and their order in the model to determine what would give me the most accuracy and least loss in my model.
 
 ![](https://github.com/MichelaZ/Neural_Network_Charity_Analysis/blob/main/Resources/nn_summary2.png)
 
-- **What steps did you take to try and increase model performance?**
+<h3>What steps did you take to try and increase model performance?</h3>
 <details><summary>To optimize the model first I tried adding additional layers with different number of neurons and activation functions, but these changes didn’t quite push the accuracy over the .75 goal.</summary>
   
 ```
@@ -204,9 +203,11 @@ for name in replace_name:
 application_df.NAME.value_counts()
 ```
  ![](https://github.com/MichelaZ/Neural_Network_Charity_Analysis/blob/main/Resources/name_counts.png)
-                                                       
+						       
 </details>
+	
 <details><summary>Last I was able to get the accuracy to .7876 by dropping the status and special considerations columns.</summary>
+	
   
 ```
 application_df.drop(["EIN","STATUS",'SPECIAL_CONSIDERATIONS'],1)
@@ -214,11 +215,7 @@ application_df.drop(["EIN","STATUS",'SPECIAL_CONSIDERATIONS'],1)
   ![](https://github.com/MichelaZ/Neural_Network_Charity_Analysis/blob/main/Resources/drop_ein_stat_sc.png)
   </details>
 
-- **Were you able to achieve the target model performance?** Yes
-
-![](https://github.com/MichelaZ/Neural_Network_Charity_Analysis/blob/main/Resources/Model2_Summary.png)
-  
-  ### Conclusions: Data Preprocessing
+ ### Conclusions: Data Preprocessing
 - **What variable(s) are considered the target(s) for your model?** 
 	- IS_SUCCESSFUL—Was the money used effectively
 - **What variable(s) are considered to be the features for your model?**
@@ -233,6 +230,18 @@ application_df.drop(["EIN","STATUS",'SPECIAL_CONSIDERATIONS'],1)
 - **What variable(s) are neither targets nor features, and should be removed from the input data?**
 	- EIN—Identification column
 	- SPECIAL_CONSIDERATIONS—Special consideration for application
-	- STATUS—Active status
+	- STATUS—Active status	
+	
+<h3>Were you able to achieve the target model performance?</h3> Yes 
 
-## Summary: Summarize the overall results of the deep learning model. Include a recommendation for how a different model could solve this classification problem, and explain your recommendation.
+![](https://github.com/MichelaZ/Neural_Network_Charity_Analysis/blob/main/Resources/Model2_Summary.png)
+  
+</details>
+
+## Summary: 
+I was able to train the model to have an accuracy of  0.7867 with .4410 loss by removing the EIN, status, and special circumstances columns; binning the name, application type, and classification columns; and experimenting with the number of hidden layers, nodes and activation functions. This meets the clients goals of attaining an accuracy of .75, but using a Random Forest I was able to acheive an accuraccy of .772. Random forests are less computationally expensive, more interpretable and require less data than neural networks, so this might be a better model to use. 
+	
+![TensorFlow](https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white)	
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
+![Jupyter Notebook](https://img.shields.io/badge/jupyter-%23FA0F00.svg?style=for-the-badge&logo=jupyter&logoColor=white)
