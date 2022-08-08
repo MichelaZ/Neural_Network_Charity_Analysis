@@ -1,5 +1,5 @@
 # Neural Network Charity Analysis
-Alphabet Soup is a non-profit foundation that provides funding to organizations dedicated to protecting the environment, improving people’s well-being and unifying the world. To help them predict which organizations to donate to I created a deep learning model using TensorFlow. Then I optimized the model for accuracy.
+Alphabet Soup is a non-profit foundation that provides funding to organizations dedicated to protecting the environment, improving people’s well-being and unifying the world. To help them predict which organizations to provide funding to I created a deep learning model using TensorFlow. Then I optimized the model for accuracy.
 
 <details><summary> <h2>Deliverable 1: Preprocessing Data for a Neural Network Model</h2></summary>
 
